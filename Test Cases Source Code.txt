@@ -1,0 +1,185 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.openBrowser(GlobalVariable.baseURL)
+
+WebUI.verifyElementVisible(findTestObject('Tic Tac Toe/button_Play'))
+
+WebUI.setText(findTestObject('Tic Tac Toe/input_Play_number'), '3')
+
+WebUI.click(findTestObject('Tic Tac Toe/button_Play'))
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/td_Play_0'), 0)
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/td_Play_8'), 0)
+
+WebUI.verifyElementNotPresent(findTestObject('Tic Tac Toe/td_Play_15'), 0)
+
+=============================================
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.openBrowser(GlobalVariable.baseURL)
+
+WebUI.verifyElementVisible(findTestObject('Tic Tac Toe/button_Play'))
+
+WebUI.setText(findTestObject('Tic Tac Toe/input_Play_number'), '4')
+
+WebUI.click(findTestObject('Tic Tac Toe/button_Play'))
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/td_Play_0'), 0)
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/td_Play_15'), 0)
+
+WebUI.verifyElementNotPresent(findTestObject('Tic Tac Toe/td_Play_24'), 0)
+
+==================================================
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.callTestCase(findTestCase('Create 3x3 Game'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_0'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_0'), 'X')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_1'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_1'), 'O')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_3'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_3'), 'X')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_4'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_4'), 'O')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_2'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_2'), 'X')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_7'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_7'), 'O')
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/div_Congratulations player O'), 0)
+
+WebUI.closeBrowser()
+
+=========================================================
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.callTestCase(findTestCase('Create 3x3 Game'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_0'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_0'), 'X')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_1'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_1'), 'O')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_3'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_3'), 'X')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_4'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_4'), 'O')
+
+WebUI.click(findTestObject('Tic Tac Toe/td_Play_6'))
+
+WebUI.verifyElementText(findTestObject('Tic Tac Toe/td_Play_6'), 'X')
+
+WebUI.verifyElementPresent(findTestObject('Tic Tac Toe/div_Congratulations player X'), 0)
+
+WebUI.closeBrowser()
+
+==================================================
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.callTestCase(findTestCase('3x3 Game - O Wins'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.refresh()
+
+WebUI.callTestCase(findTestCase('Create 3x3 Game'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.closeBrowser()
+
